@@ -16,7 +16,7 @@ export default function ProjectCard({ project }) {
         View Repo
       </a>
       <a
-        href={`https://duminimum${project.name}.vercel.app`}
+        href={`https://${project.name}.vercel.app`}
         target="_blank"
         rel="noopener noreferrer"
         className="card-link"
