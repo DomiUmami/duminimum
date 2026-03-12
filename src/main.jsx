@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import './styles/index.css';
+import "./styles/NewApp.css"
 
 import Cred from './pages/Cred';
 import Home from './pages/Home';

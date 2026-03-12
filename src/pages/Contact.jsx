@@ -1,12 +1,9 @@
-import '../styles/App.css';
+import "../styles/NewApp.css"
 
 
 import Header from '../components/header';
 import Footer from '../components/footer';
 
-import "../styles/Header.css"
-import "../styles/Layout.css"
-import "../styles/Contact.css"
 
 import ProjectCardGenerator from "../components/CardGenerator";
 import GithubProfile from '../components/GitHubCall';

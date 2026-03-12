@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/App.css';
+import "../styles/NewApp.css"
 import Header from '../components/header';
 import Footer from '../components/footer';
 import ProjectCardGenerator from "../components/CardGenerator";
@@ -7,13 +7,11 @@ import ProjectCardGenerator from "../components/CardGenerator";
 function Home() {
 
   return (
-    <div className='App'>
+    <div className='body'>
       <Header />
-    <main className='main' style={{ textAlign: 'center', padding: '2rem' }}>
-      <h1>Welcome!</h1>
+    <main className='main'>
       <ProjectCardGenerator username="DomiUmami"/>
     </main>
-
       <Footer />
     </div>
   );

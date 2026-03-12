@@ -1,6 +1,4 @@
-import React from 'react';
-
-import "../styles/Verity.css"
+import "../styles/NewApp.css"
 
 
 import Header from '../components/header';

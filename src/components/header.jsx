@@ -1,13 +1,9 @@
 import React, { useState } from "react";
-import "../styles/Header.css";
+import "../styles/NewApp.css"
 import { useLocation } from "react-router-dom";
 
 function Header() {
-  const [isOpen, setIsOpen] = useState(false);
 
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
 
   const location = useLocation();
   const routeTitles = {
@@ -24,24 +20,17 @@ const goHome = () => {
 
   return (
        <header className="header">
-      <h1 className="logo" onClick={goHome} >
-        {headerName}
-      </h1>
-
-
+      <a className="compname" onClick={goHome} > DUMinimum </a>
      <nav className="nav">
-        <button className="dropdown-btn" 
-        onClick={toggleDropdown}
-        >
-          Menu
-        </button>
-        {isOpen && (
-          <ul className="dropdown-menu">
-            <li><a href="https://ducontact.vercel.app">Contact</a></li>
-            <li><a href="https://duminimum.vercel.app/cred">Credentialing</a></li>
-            <li><a href="https://handlerlite.vercel.app">Handlerlite</a></li>
-          </ul>
-        )}
+          <a className="links" href="">Home</a>
+<a> | </a>
+          <a className="links" href="https://ducontact.vercel.app">Contact</a>
+<a> | </a>
+          <a className="links" href="">LinkedIn</a>
+<a> | </a>
+          <a className="links" href="https://handlerlite.vercel.app">Handlerlite</a>
+<a> | </a>
+          <a className="links" href="">About Me</a>
       </nav>
     </header>
   );

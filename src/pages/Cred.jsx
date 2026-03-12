@@ -1,4 +1,4 @@
-import '../styles/App.css';
+import "../styles/NewApp.css"
 import MyForm from '../components/form';
 import Header from '../components/header';
 import Footer from '../components/footer';
