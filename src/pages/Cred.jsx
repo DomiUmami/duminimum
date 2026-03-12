@@ -1,14 +1,10 @@
-//import logo from '../images/logo512.png';
 import '../styles/App.css';
 import MyForm from '../components/form';
-//import { useHistory } from 'react-router-dom';
 import Header from '../components/header';
 import Footer from '../components/footer';
 
 
 function Cred() {
-
-//const history = useHistory();
 
   return (
     <div className="App">

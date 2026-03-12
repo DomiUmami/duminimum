@@ -1,5 +1,4 @@
 import React from 'react';
-/*import { useHistory } from 'react-router-dom';*/
 import '../styles/App.css';
 import Header from '../components/header';
 import Footer from '../components/footer';

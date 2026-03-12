@@ -2,7 +2,6 @@ import React from 'react';
 
 import "../styles/Verity.css"
 
-/*import { useHistory } from 'react-router-dom';*/
 
 import Header from '../components/header';
 import Footer from '../components/footer';
@@ -11,7 +10,6 @@ import Footer from '../components/footer';
 
 
 function Verity() {
-  /*const history = useHistory();*/
   
   return (
     <div className="grid-container">
