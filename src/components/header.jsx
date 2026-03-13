@@ -1,9 +1,14 @@
 import React, { useState } from "react";
-import "../styles/NewApp.css"
+import '../styles/NewApp.css';
 import { useLocation } from "react-router-dom";
 
-function Header() {
 
+function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
 
   const location = useLocation();
   const routeTitles = {
@@ -22,15 +27,15 @@ const goHome = () => {
        <header className="header">
       <a className="compname" onClick={goHome} > DUMinimum </a>
      <nav className="nav">
-          <a className="links" href="">Home</a>
+          <a className="links" href="https://duminimum.vercel.app">Home</a>
 <a> | </a>
           <a className="links" href="https://ducontact.vercel.app">Contact</a>
 <a> | </a>
-          <a className="links" href="">LinkedIn</a>
+          <a className="links" href="https://www.linkedin.com/in/dominikwilliams/">LinkedIn</a>
 <a> | </a>
           <a className="links" href="https://handlerlite.vercel.app">Handlerlite</a>
 <a> | </a>
-          <a className="links" href="">About Me</a>
+          <a className="links" href="https://github.com/DomiUmami/DomiUmami.git">About Me</a>
       </nav>
     </header>
   );

@@ -28,8 +28,9 @@ header.header {
 }
 .compname {
   position: static;
-  margin-left: 45%;
+  margin-left: 10%;
   margin-top: 0.4rem;
+  padding-right: 5%;
   font-size: 1.5rem;
   font-weight: 500;
   color: rgb(0, 0, 0);
