@@ -4,7 +4,7 @@ import Header from '../components/header';
 import Footer from '../components/footer';
 
 
-function Cred() {
+function Info() {
 
   return (
     <div className="App">
@@ -24,4 +24,4 @@ function Cred() {
   );
 }
 
-export default Cred;
+export default Info;

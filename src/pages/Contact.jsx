@@ -15,12 +15,9 @@ function Contact() {
     <div className="grid-container">
       <Header></Header>
 
-      <aside className="sidebar">
-        <ProjectCardGenerator username="DomiUmami"/>
-      </aside>
-
       <main className="main">
         <GithubProfile username="DomiUmami" />
+        <ProjectCardGenerator username="DomiUmami"/>
       </main>
 
       <aside className="rightside">

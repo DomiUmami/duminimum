@@ -5,27 +5,37 @@ import "./styles/NewApp.css"
 
 import { Analytics } from '@vercel/analytics/react';
 
-import Cred from './pages/Cred';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
-import Verity from './pages/Verity';
+import Payment from './pages/Payment';
+import Projects from './pages/Portfolio';
+import Info from './pages/Info';
+import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Router>
       <Switch>
-        {/* Homepage */}
+
+       {/* Homepage */}
         <Route exact path="/" component={Home} />
-
-        {/* Your form/application */}
-        <Route path="/cred" component={Cred} />
-
-       {/* Contact */}
+       {/* Contact and Booking */}
         <Route path="/contact" component={Contact} />
+       {/* Payment Portal */}
+        <Route path="/payment" component={Payment} />
+       {/* Projects */}
+        <Route path="/projects" component={Projects} />
+       {/* Info/ICS App Currently */}
+        <Route path="/info" component={Info} />
+       {/* Info/ICS App Currently */}
+        <Route path="/privacy" component={Privacy} />
+       {/* Info/ICS App Currently */}
+        <Route path="/terms" component={Terms} />
+     
        
-       {/* Verity */}
-        <Route path="/verity" component={Verity} />
 
       </Switch>
     </Router>
