@@ -17,7 +17,7 @@ function Footer() {
       target="_blank"
       rel="noopener noreferrer"
       >
-    info@duminimum.com
+    duminimum@gmail.com
   </a>
     </div>
   </div>

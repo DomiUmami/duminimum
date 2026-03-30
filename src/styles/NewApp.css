@@ -7,8 +7,17 @@ html, body {
     box-sizing: border-box;
     width: 100%;
     height: 100%;
+    scroll-behavior: auto;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
+    overflow-x: hidden;
+  }
+
+  .page {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
 
 /* =========================
    Header Container
@@ -65,9 +74,13 @@ header.header {
 Main Page
 ========================= */
 .main {
+    display: flex;
+    flex-direction: column;
     margin-top: 3rem;
-    grid-area: main;
-    padding: 1rem;
+    margin-left: 0rem;
+    padding: 0rem;
+    min-height: 100vh;
+    max-height: auto;
     background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgb(87, 199, 180) 96%, rgb(72, 133, 130) 100%);
     background-repeat: no-repeat;
     background-size: 100%;
@@ -78,6 +91,73 @@ Main Page
     font-size: 1.2rem;
     font-weight: bold;
     color: #425a51;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: row;
+  background-color: #ff000000;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.content {
+  background-color: #96969698;
+  border-radius: 2rem;
+  padding: 2rem;
+  border-style: double;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.bookingbtn {
+  display: flex;
+  flex-direction: column;
+  font-size: clamp(0.5rem, 1vw + 1rem, 1.5rem);
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.bookingtext {
+  display: flex;
+  flex-direction: column;
+  color: #000000;
+}
+
+.about-container {
+  padding: 0rem 2rem;
+  background-color: #000000;
+  border-style: groove;
+}
+
+.about-text {
+  font-size: 1rem;
+  color: #ffffff;
+}
+.about-text-1 {
+  font-size: 1.3rem;
+  color: #ffffff;
+}
+
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  background: rgb(0, 0, 0);
+  border-radius: 1.5rem;
+  padding: 1rem;
+  padding-right: 3%;
+  margin: 0.7rem;
+  min-width: 10rem;
+  max-width: 10rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #ffffff;
+  text-decoration: none;
+}
+.contact-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* =========================
@@ -156,6 +236,10 @@ Main Page
     padding-bottom: 0.5rem;
 }
 
+.profile-picture {
+  border-style: solid;
+  border-color: black;
+}
 
 .project-card {
   display: flex;
@@ -240,6 +324,13 @@ Main Page
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 0.6s forwards ease-out;
+}
+
+/*======================
+      Mobile
+======================*/
+@media (max-width: 768px) {
+  
 }
 
 @keyframes fadeInUp {

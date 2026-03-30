@@ -33,9 +33,9 @@ function GithubProfile({ username }) {
         width="120"
         style={{ borderRadius: "50%" }}
       />
-      <p className="profile-name">{profile.name || profile.login}</p>
-      <p className="profile-login">{profile.login}</p>
-      {profile.bio && <p>{profile.bio}</p>}
+      <p className="card-title">{profile.name || profile.login}</p>
+      <p className="card-description">{profile.login}</p>
+      {profile.bio && <p className="card-description">{profile.bio}</p>}
         </div>
     </div>
   );

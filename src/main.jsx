@@ -21,9 +21,8 @@ root.render(
       <Switch>
 
        {/* Homepage */}
-        <Route exact path="/" component={Home} />
        {/* Contact and Booking */}
-        <Route path="/contact" component={Contact} />
+        <Route exact path="/" component={Contact} />
        {/* Payment Portal */}
         <Route path="/payment" component={Payment} />
        {/* Projects */}

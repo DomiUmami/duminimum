@@ -1,13 +1,16 @@
 {
-  "name": "reactics",
+  "name": "duminimum",
   "version": "5.0.2",
   "private": true,
   "type": "module",
   "dependencies": {
+    "@stripe/react-stripe-js": "^6.0.0",
+    "@stripe/stripe-js": "^9.0.0",
     "@vercel/analytics": "^2.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^5.3.4"
+    "react-router-dom": "^5.3.4",
+    "stripe": "^21.0.1"
   },
   "scripts": {
     "dev": "vite",
