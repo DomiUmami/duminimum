@@ -216,15 +216,11 @@ Main Page
     display: flex;
     flex-direction: column;
     gap: 2rem;
+
 }
 
 .project-card-row::-webkit-scrollbar {
   display: none;
-}
-
-.project-card-row {
-  scrollbar-width: none;
-  
 }
 
 .project-card-row{
@@ -233,6 +229,7 @@ Main Page
     gap: 0.4rem;
     overflow-x: auto;
     scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
     padding-bottom: 0.5rem;
 }
 
@@ -248,7 +245,7 @@ Main Page
   border-radius: 12px;
   padding: 1rem;
   margin: 0.5rem;
-  min-width: 12rem;
+  min-width: 11rem;
   max-width: 12rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -256,6 +253,7 @@ Main Page
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: hidden;
 }
 .project-card:hover {
   transform: translateY(-8px);
@@ -330,6 +328,15 @@ Main Page
       Mobile
 ======================*/
 @media (max-width: 768px) {
+  .main {
+    padding: 1rem;
+  }
+  .content-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   
 }
 

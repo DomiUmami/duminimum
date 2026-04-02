@@ -28,13 +28,6 @@ function Contact() {
       <a className="contact-card" href="https://www.upwork.com/freelancers/~018af57cb60a01e8a7?mp_source=share">Upwork</a>
       </div>
       </div>
-
-      <div className="content-container">
-        <div className="content">
-        </div>
-        <div className="content">
-        </div>
-      </div>
       </main>
       <Footer/>
     </div>
