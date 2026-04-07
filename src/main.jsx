@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, useLocation } from 'react-router-dom';
 import "./styles/NewApp.css"
+import ScrollToTop from './components/ScrollToTop';
 
 import { Analytics } from '@vercel/analytics/react';
 
@@ -12,12 +13,14 @@ import Projects from './pages/Portfolio';
 import Info from './pages/Info';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
+import Booking from './pages/Booking';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Router>
+        <ScrollToTop/>
       <Switch>
 
        {/* Homepage */}
@@ -33,6 +36,8 @@ root.render(
         <Route path="/privacy" component={Privacy} />
        {/* Info/ICS App Currently */}
         <Route path="/terms" component={Terms} />
+       {/* Calendly Booking */}
+        <Route path="/booking" component={Booking} />
      
        
 

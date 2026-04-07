@@ -27,7 +27,7 @@ const goHome = () => {
        <header className="header">
       <a className="compname" onClick={goHome} > DUMinimum </a>
      <nav className="nav">
-          <a className="links" href="https://duminimum.vercel.app">Home</a>
+          <Link to='/' className="links">Home</Link>
 <a> | </a>
           <a className="links" href="https://www.linkedin.com/in/dominikwilliams/">LinkedIn</a>
 <a> | </a>

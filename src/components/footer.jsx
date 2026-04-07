@@ -23,7 +23,7 @@ function Footer() {
   </div>
 
   
-  <div className="footer-bottom">© 2025 by DUMinimum. Powered by <a href="https://duminimum.vercel.app/" className="footerlink">DU</a></div>
+  <div className="footer-bottom">© {new Date().getFullYear()} by DUMinimum. Powered by{" "}<a href="https://duminimum.vercel.app/" className="footerlink">DUMinimum</a></div>
         </footer>
   );
 }
