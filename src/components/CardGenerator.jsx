@@ -31,7 +31,6 @@ export default function ProjectCardGenerator({ username }) {
   const liveSites = [
     "duminimum",
     "handlerlite",
-    "DUContact",
 
   ]
 
