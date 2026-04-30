@@ -33,9 +33,9 @@ root.render(
        {/* Info/ICS App Currently */}
         <Route path="/info" component={Info} />
        {/* Info/ICS App Currently */}
-        <Route path="/privacy" component={Privacy} />
+        <Route path="/privacy-policy" component={Privacy} />
        {/* Info/ICS App Currently */}
-        <Route path="/terms" component={Terms} />
+        <Route path="/terms-and-conditions" component={Terms} />
        {/* Calendly Booking */}
         <Route path="/booking" component={Booking} />
      

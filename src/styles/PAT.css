@@ -1,0 +1,56 @@
+/* =========================
+   PAT
+========================= */
+.pat-main {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+    margin-left: 0rem;
+    padding: 0rem;
+    min-height: 100vh;
+    max-height: auto;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%,  rgb(255, 255, 255) 70%, rgb(87, 199, 180) 96%, rgb(72, 133, 130) 100%);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.pat-title {
+    margin-left: 2rem;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.pat-container-c{
+  padding: 0rem 2rem;
+  background-color: #00000000;
+}
+
+.pat-container-b{
+  padding: 3rem 2rem;
+  background-color: #000000;
+}
+
+.pat-header {
+  margin-top: 28px;
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+}
+.pat-header-b {
+  margin-top: 28px;
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: rgb(0, 0, 0);
+}
+
+.pat-text-b {
+  color: #a3a3a3;
+}
+
+.pat-text-w {
+  color: #ffffff;
+}
