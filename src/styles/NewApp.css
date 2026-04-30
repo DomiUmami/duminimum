@@ -1,4 +1,10 @@
 /* =========================
+   Imports
+========================= */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500;600;700;800;900&display=swap');
+
+
+/* =========================
    Global reset & base
 ========================= */
 html, body {
@@ -7,9 +13,14 @@ html, body {
     box-sizing: border-box;
     width: 100%;
     scroll-behavior: auto;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
   }
+
+  /* 
+      font-family: 'Orbitron', sans-serif;
+
+  */
 
   .page {
     position: relative;
@@ -79,7 +90,7 @@ Main Page
     padding: 0rem;
     min-height: 100vh;
     max-height: auto;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgb(87, 199, 180) 96%, rgb(72, 133, 130) 100%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%,  rgb(255, 255, 255) 70%, rgb(87, 199, 180) 96%, rgb(72, 133, 130) 100%);
     background-repeat: no-repeat;
     background-size: 100%;
 }
@@ -94,7 +105,7 @@ Main Page
 .content-container {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
   background-color: #ff000000;
   padding: 1rem;
   gap: 1rem;
@@ -111,7 +122,6 @@ Main Page
   height: auto;
   flex: 0 auto auto;
   border-style: double;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 
@@ -196,7 +206,6 @@ Main Page
 
 .footer-bottom{
     align-self: center;
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 0.7rem;
     position: absolute;
     bottom: 0.5rem;

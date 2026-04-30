@@ -1,0 +1,92 @@
+/* =========================
+   Imports
+========================= */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500;600;700;800;900&display=swap');
+
+.typing-container {
+  display: flex;
+  align-items: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem; /* adjust as needed */
+  cursor: default;
+}
+
+.dynamic-text {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.word {
+  position: absolute;
+  left: 0;
+  top: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid orange; /* cursor */
+}
+
+/* DUMINIMUM (8 chars) */
+.word1 {
+  animation: type1 6s steps(8, end) infinite;
+}
+
+/* esign (5 chars) */
+.word2 {
+  animation: type2 3.5s steps(5, end) infinite;
+  animation-delay: 6s;
+}
+
+/* evelop (6 chars) */
+.word3 {
+  animation: type3 4s steps(6, end) infinite;
+  animation-delay: 9.5s;
+}
+
+/* eploy (5 chars) */
+.word4 {
+  animation: type4 3.5s steps(5, end) infinite;
+  animation-delay: 13.5s;
+}
+
+.cursor {
+  color: rgb(41, 238, 218);
+}
+
+
+/* Typing + backspace animations */
+@keyframes type1 {
+  0%, 15% { width: 0ch; }
+  30%, 65% { width: 8ch; } /* hold longer */
+  80%, 100% { width: 0ch; }
+}
+
+@keyframes type2 {
+  0%, 15% { width: 0ch; }
+  30%, 65% { width: 5ch; }
+  80%, 100% { width: 0ch; }
+}
+
+@keyframes type3 {
+  0%, 15% { width: 0ch; }
+  30%, 65% { width: 6ch; }
+  80%, 100% { width: 0ch; }
+}
+
+@keyframes type4 {
+  0%, 15% { width: 0ch; }
+  30%, 65% { width: 5ch; }
+  80%, 100% { width: 0ch; }
+}
+
+/* Cursor blink */
+.word::after {
+  content: "";
+  display: inline-block;
+  width: 0.1ch;
+  animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}

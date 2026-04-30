@@ -10,7 +10,7 @@ function Terms() {
       <Header />
     <main className='main'>
     <div>
-      <div className='about-container'>
+      <div className='about-container' style={{ fontFamily}}>
           <h1 className='about-text'>Terms and Conditions</h1>
 
           <h1 className='about-text'>Last updated: [03/30/2026]</h1>

@@ -25,8 +25,10 @@ const goHome = () => {
 
   return (
        <header className="header">
+
       <a className="compname" onClick={goHome} > DUMinimum </a>
      <nav className="nav">
+        
           <Link to='/' className="links">Home</Link>
 <a> | </a>
           <a className="links" href="https://www.linkedin.com/in/dominikwilliams/">LinkedIn</a>
