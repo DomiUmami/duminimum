@@ -28,7 +28,7 @@ function Contact() {
           </div>
         <div className="content">
       <a  className="contact-card" 
-          href="mailto:duminimum@gmail.com"
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=duminimum@gmail.com&su=Hello&body=I%20saw%20your%20portfolio..."
           target="_blank"
           rel="noopener noreferrer"> Email </a>
       
