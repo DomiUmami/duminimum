@@ -80,12 +80,9 @@ Main Page
 .main {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     margin-top: 3rem;
-    margin-left: 0rem;
-    padding: 0rem;
-    min-height: 100vh;
-    max-height: auto;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%,  rgb(255, 255, 255) 70%, rgb(87, 199, 180) 96%, rgb(72, 133, 130) 100%);
+    background: linear-gradient(180deg, rgb(236, 236, 236) 0%,  rgb(255, 255, 255) 70%, rgb(87, 199, 180) 96%, rgb(72, 133, 130) 100%);
     background-repeat: no-repeat;
     background-size: 100%;
 }
@@ -97,9 +94,19 @@ Main Page
     color: #425a51;
 }
 
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
 .content-container {
   display: flex;
   flex-direction: row;
+  align-self: center;
   align-items: center;
   background-color: #ff000000;
   padding: 1rem;
@@ -115,7 +122,6 @@ Main Page
   padding: 1rem;
   gap: 1rem;
   height: auto;
-  flex: 0 auto auto;
   border-style: double;
 }
 
@@ -156,7 +162,7 @@ Main Page
   background: rgb(0, 0, 0);
   border-radius: 1.5rem;
   padding: 1rem;
-  width: 4rem;
+  width: 15rem;
   height: 3rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -168,6 +174,8 @@ Main Page
   transform: translateY(-8px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
+
+
 
 /* =========================
    Footer
@@ -231,14 +239,12 @@ Main Page
   display: none;
 }
 
-.project-card-row{
+.project-card-row {
     display: flex;
-    flex-direction: row;
-    gap: 0.4rem;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
-    padding-bottom: 0.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    width: 100%;
 }
 
 .profile-picture {
@@ -249,7 +255,7 @@ Main Page
 .project-card {
   display: flex;
   flex-direction: row;
-  background: white;
+  background: rgba(59, 97, 88, 0.185);
   border-radius: 12px;
   padding: 1rem;
   margin: 0.5rem;

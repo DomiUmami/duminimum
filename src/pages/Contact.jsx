@@ -1,46 +1,157 @@
-import "../styles/NewApp.css"
+import "../styles/NewApp.css";
 
-
-import Header from '../components/header';
-import Footer from '../components/footer';
-
+import Header from "../components/header";
+import Footer from "../components/footer";
+import GithubProfile from "../components/GitHubCall";
 
 import { Link } from "react-router-dom";
-import ProjectCardGenerator from "../components/CardGenerator";
-import GithubProfile from '../components/GitHubCall';
-import Typewriter from "../components/Typewriter";
+
 
 function Contact() {
 
-  
-  return (
-    <div className="body">
-      <Header/>
-      <main className="main">
-      <div className="content-container" style={{alignSelf:"center"}}>
-      </div>
-      <div className="content-container">
+  const contacts = [
+    {
+      title: "Email",
+      description: "Send me a direct message",
+      link:
+        "https://mail.google.com/mail/?view=cm&fs=1&to=duminimum@gmail.com&su=Hello&body=I%20saw%20your%20portfolio..."
+    },
+    {
+      title: "LinkedIn",
+      description: "Professional profile",
+      link:
+        "https://www.linkedin.com/in/dominikwilliams/"
+    },
+    {
+      title: "Upwork",
+      description: "Freelance services",
+      link:
+        "https://www.upwork.com/freelancers/~018af57cb60a01e8a7?mp_source=share"
+    }
+  ];
 
-      </div>
-        <div className="content-container">
+
+  return (
+
+    <div className="page">
+
+      <Header />
+
+      <main className="main">
+
+
+        {/* INTRO */}
+        <section className="content-container">
+
           <div className="content">
-        <GithubProfile username="DomiUmami"/>
+
+            <div className="maintext">
+
+              <h1>
+                Let's Work Together
+              </h1>
+
+
+              <p>
+                Interested in a website, redesign, or development project?
+                Send me a message and let's discuss your ideas.
+              </p>
+
+
+              <Link 
+                to="/booking"
+                className="live-link"
+              >
+                Book A Consultation
+              </Link>
+
+
+            </div>
+
+
           </div>
-        <div className="content">
-      <a  className="contact-card" 
-          href="https://mail.google.com/mail/?view=cm&fs=1&to=duminimum@gmail.com&su=Hello&body=I%20saw%20your%20portfolio..."
-          target="_blank"
-          rel="noopener noreferrer"> Email </a>
-      
-      <a className="contact-card" href="https://www.linkedin.com/in/dominikwilliams/">LinkedIn</a>
-      <a className="contact-card" href="https://www.upwork.com/freelancers/~018af57cb60a01e8a7?mp_source=share">Upwork</a>
-      <Link to="/booking" className="contact-card">Booking</Link>
-      </div>
-      </div>
+
+        </section>
+
+
+
+
+        {/* CONTACT LINKS */}
+        <section className="content-container">
+
+          <div className="content">
+
+
+            {
+              contacts.map((contact)=>(
+                
+                <a
+                  key={contact.title}
+                  href={contact.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-card"
+                >
+
+                  <h3>
+                    {contact.title}
+                  </h3>
+
+
+                  <p>
+                    {contact.description}
+                  </p>
+
+
+                </a>
+
+              ))
+            }
+
+
+
+            <Link 
+              to="/booking"
+              className="contact-card"
+            >
+
+              <h3>
+                Booking
+              </h3>
+
+              <p>
+                Schedule a meeting
+              </p>
+
+            </Link>
+
+
+          </div>
+
+
+        </section>
+
+
+
+
+
+        {/* GITHUB */}
+        <section className="content-container">
+
+
+          <div className="content">
+
+            <GithubProfile username="DomiUmami" />
+          </div>
+        </section>
+
       </main>
-      <Footer/>
+      <Footer />
     </div>
+
   );
+
 }
+
 
 export default Contact;

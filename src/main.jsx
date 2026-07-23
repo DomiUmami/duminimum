@@ -6,7 +6,6 @@ import ScrollToTop from './components/ScrollToTop';
 
 import { Analytics } from '@vercel/analytics/react';
 
-import Home from './pages/Home';
 import Contact from './pages/Contact';
 import Payment from './pages/Payment';
 import Projects from './pages/Portfolio';
@@ -14,6 +13,7 @@ import Info from './pages/Info';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
 import Booking from './pages/Booking';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
