@@ -35,7 +35,7 @@ const goHome = () => {
 <a> | </a>
           <Link to='/projects' className="links">Projects</Link>
 <a> | </a>
-          <a className="links" href="https://website-reference-blue.vercel.app">Current Project</a>
+          <a className="links" href="https://www.rbrock1588.org">Recent Project</a>
           
       </nav>
     </header>

@@ -161,7 +161,7 @@ Main Page
   justify-content: center;
   background: rgb(0, 0, 0);
   border-radius: 1.5rem;
-  padding: 1rem;
+  padding: 1.5rem 1rem;
   width: 15rem;
   height: 3rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -299,6 +299,12 @@ Main Page
   font-weight: 500;
   transition: background-color 0.25s ease, transform 0.1s ease;
 }
+
+.live-link:hover {
+  background-color: #13a888;
+}
+
+
 .repo-link {
   display: inline-block;
   padding: 0.6rem 1rem;
