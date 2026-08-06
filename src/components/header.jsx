@@ -20,7 +20,7 @@ function Header() {
 
 const goHome = () => {
     // External link (different domain)
-    window.location.href = "https://duminimum.vercel.app/";
+    window.location.href = "https://duminimum.com";
   };
 
   return (
