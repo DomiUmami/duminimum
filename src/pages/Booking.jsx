@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 import "../styles/Updated.css";
 import "../styles/Booking.css";
 import { useEffect } from "react";
@@ -70,7 +70,7 @@ function Booking() {
             <p>
               Not ready to schedule a call?
               {" "}
-              <a href="/contact">Send me a project inquiry instead ↗</a>
+              <Link to="/contact">Send me a project inquiry instead ↗</Link>
             </p>
           </div>
         </section>

@@ -28,7 +28,7 @@ function About() {
             </p>
 
             <div className="about-actions">
-              <Link to="/projects" className="about-button">
+              <Link to="/portfolio" className="about-button">
                 View My Work ↗
               </Link>
 
