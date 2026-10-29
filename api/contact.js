@@ -147,8 +147,15 @@ ${cleanDetails}
       success: true,
       message: "Message sent successfully.",
     });
+
   } catch (error) {
-    console.error("Contact form email error:", error);
+  console.error("Contact form email error:", {
+    message: error.message,
+    code: error.code,
+    command: error.command,
+    responseCode: error.responseCode,
+    response: error.response,
+  });
 
     return res.status(500).json({
       error: "Unable to send your inquiry. Please try again later.",
