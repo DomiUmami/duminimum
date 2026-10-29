@@ -1,4 +1,5 @@
 
+import { Link } from "react-router-dom";
 import "../styles/Updated.css";
 import "../styles/About.css";
 import Header from "../components/header";
@@ -27,13 +28,13 @@ function About() {
             </p>
 
             <div className="about-actions">
-              <a href="/projects" className="about-button">
+              <Link to="/projects" className="about-button">
                 View My Work ↗
-              </a>
+              </Link>
 
-              <a href="/contact" className="about-button-secondary">
+              <Link to="/contact" className="about-button-secondary">
                 Get In Touch
-              </a>
+              </Link>
             </div>
           </div>
         </section>
@@ -151,9 +152,9 @@ function About() {
               idea, I'd be happy to hear what you're working on.
             </p>
 
-            <a href="/contact" className="about-button">
+            <Link to="/contact" className="about-button">
               Start a Conversation ↗
-            </a>
+            </Link>
           </div>
         </section>
       </main>

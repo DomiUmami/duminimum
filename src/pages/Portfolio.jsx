@@ -1,4 +1,5 @@
 
+import { Link } from "react-router-dom";
 import "../styles/Updated.css";
 import "../styles/Portfolio.css";
 import Header from "../components/header";
@@ -81,9 +82,9 @@ function Portfolio() {
               digital idea to life? Let's talk about what you need.
             </p>
 
-            <a href="/contact" className="portfolio-button">
+            <Link to="/contact" className="portfolio-button">
               Start a Conversation ↗
-            </a>
+            </Link>
           </div>
         </section>
       </main>
