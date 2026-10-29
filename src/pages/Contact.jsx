@@ -1,135 +1,237 @@
-import "../styles/NewApp.css";
 
+import { useState } from "react";
+import "../styles/Contact.css";
+import "../styles/Updated.css";
 import Header from "../components/header";
 import Footer from "../components/footer";
-import GithubProfile from "../components/GitHubCall";
 
-import { Link } from "react-router-dom";
+const initialFormData = {
+  name: "",
+  email: "",
+  projectType: "",
+  budget: "",
+  timeline: "",
+  details: "",
+};
 
+export default function Contact() {
+  const [formData, setFormData] = useState(initialFormData);
+  const [submitting, setSubmitting] = useState(false);
+  const [status, setStatus] = useState(null);
 
-function Contact() {
+  function handleChange(event) {
+    const { name, value } = event.target;
 
-  const contacts = [
-    {
-      title: "Email",
-      description: "Send me a direct message",
-      link:
-        "https://mail.google.com/mail/?view=cm&fs=1&to=duminimum@gmail.com&su=Hello&body=I%20saw%20your%20portfolio..."
-    },
-    {
-      title: "LinkedIn",
-      description: "Professional profile",
-      link:
-        "https://www.linkedin.com/in/dominikwilliams/"
-    },
-    {
-      title: "Github",
-      description: "Project Repos",
-      link:
-        "https://github.com/DomiUmami"
+    setFormData((previous) => ({
+      ...previous,
+      [name]: value,
+    }));
+
+    if (status) {
+      setStatus(null);
     }
-  ];
+  }
 
+  async function handleSubmit(event) {
+    event.preventDefault();
+
+    setSubmitting(true);
+    setStatus(null);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(
+          result.error || "Unable to send your inquiry. Please try again."
+        );
+      }
+
+      setStatus({
+        type: "success",
+        message: "Thanks! Your inquiry has been sent successfully.",
+      });
+
+      setFormData(initialFormData);
+    } catch (error) {
+      setStatus({
+        type: "error",
+        message:
+          error.message ||
+          "Something went wrong. Please try again later.",
+      });
+    } finally {
+      setSubmitting(false);
+    }
+  }
 
   return (
+      <main className="contact-page">
+        <Header />
+      <section className="contact-form-section">
+        <div className="contact-intro">
+          <p className="section-eyebrow">LET'S WORK TOGETHER</p>
 
-    <div className="page">
+          <h1>
+            Tell me about your <span>project.</span>
+          </h1>
 
-      <Header />
+          <p>
+            Have a website idea or need help improving an existing one?
+            Send me a few details and I'll get back to you.
+          </p>
+        </div>
 
-      <main className="main">
+        <form className="inquiry-form" onSubmit={handleSubmit}>
+          <div className="form-row">
+            <div className="form-group">
+              <label htmlFor="name">Name *</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                autoComplete="name"
+                value={formData.name}
+                onChange={handleChange}
+                maxLength={100}
+                required
+                disabled={submitting}
+                placeholder="Your name"
+              />
+            </div>
 
-
-        {/* INTRO */}
-        <section className="content-container">
-
-          <div className="content">
-
-            <div className="maintext">
-
-              <h1>
-                Let's Work Together
-              </h1>
-              <p>
-                Interested in a website, redesign, or development project?
-                Send me a message and let's discuss your ideas.
-              </p>
-              <Link 
-                to="/booking"
-                className="live-link"
-              >
-                Book A Consultation
-              </Link>
+            <div className="form-group">
+              <label htmlFor="email">Email *</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autoComplete="email"
+                value={formData.email}
+                onChange={handleChange}
+                maxLength={254}
+                required
+                disabled={submitting}
+                placeholder="you@example.com"
+              />
             </div>
           </div>
-        </section>
-        {/* CONTACT LINKS */}
-        <section className="content-container">
 
-          <div className="content">
-            {
-              contacts.map((contact)=>(
-                <a
-                  key={contact.title}
-                  href={contact.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="contact-card"
-                >
-                  <h3>
-                    {contact.title}
-                  </h3>
-                  <p>
-                    {contact.description}
-                  </p>
-                </a>
-              ))
-            }
-
-            <Link 
-              to="/booking"
-              className="contact-card"
+          <div className="form-group">
+            <label htmlFor="projectType">What do you need? *</label>
+            <select
+              id="projectType"
+              name="projectType"
+              value={formData.projectType}
+              onChange={handleChange}
+              required
+              disabled={submitting}
             >
-              <h3>
-                Booking
-              </h3>
-
-              <p>
-                Schedule a meeting
-              </p>
-            </Link>
+              <option value="">Select a service</option>
+              <option value="New Website">New Website</option>
+              <option value="Website Redesign">Website Redesign</option>
+              <option value="Website Development">
+                Website Development
+              </option>
+              <option value="Maintenance and Support">
+                Maintenance and Support
+              </option>
+              <option value="Other">Other</option>
+            </select>
           </div>
-        </section>
 
+          <div className="form-row">
+            <div className="form-group">
+              <label htmlFor="budget">Estimated budget</label>
+              <select
+                id="budget"
+                name="budget"
+                value={formData.budget}
+                onChange={handleChange}
+                disabled={submitting}
+              >
+                <option value="">Select a budget</option>
+                <option value="Under $250">Under $250</option>
+                <option value="$250–$500">$250–$500</option>
+                <option value="$500–$1,000">$500–$1,000</option>
+                <option value="$1,000+">$1,000+</option>
+                <option value="Not sure yet">Not sure yet</option>
+              </select>
+            </div>
 
-
-
-
-        {/* GITHUB */}
-        <section className="content-container">
-          <div className="content">
-
-            <GithubProfile username="DomiUmami" />
-          <p>
-            My journey into web development started from a career built on problem-solving, technology, and self-directed learning. After spending years working in surveying, mapping, data management, and technical support roles, I discovered a passion for building digital solutions that help people and businesses operate more efficiently.
-            </p>
-          <p>
-            As someone who is largely self-taught, I've always enjoyed learning new skills and adapting to new challenges. Web development became a natural extension of that mindset, allowing me to combine creativity with technical problem-solving. Whether I'm developing applications, designing websites, or improving user experiences, I enjoy turning ideas into functional tools that create real value.
-            </p>
-          <p>
-            Today, I continue to pursue web development because it gives me the opportunity to build, learn, and grow while helping others bring their projects and businesses to life. Every project is a chance to improve my skills, solve a new problem, and create something meaningful.
-            </p>
-
+            <div className="form-group">
+              <label htmlFor="timeline">Desired timeline</label>
+              <select
+                id="timeline"
+                name="timeline"
+                value={formData.timeline}
+                onChange={handleChange}
+                disabled={submitting}
+              >
+                <option value="">Select a timeline</option>
+                <option value="ASAP">ASAP</option>
+                <option value="Within 2–4 weeks">
+                  Within 2–4 weeks
+                </option>
+                <option value="Within 1–3 months">
+                  Within 1–3 months
+                </option>
+                <option value="Flexible">Flexible</option>
+              </select>
+            </div>
           </div>
-        </section>
 
-      </main>
-      <Footer />
-    </div>
+          <div className="form-group">
+            <label htmlFor="details">Project details *</label>
+            <textarea
+              id="details"
+              name="details"
+              value={formData.details}
+              onChange={handleChange}
+              rows={6}
+              maxLength={2000}
+              required
+              disabled={submitting}
+              placeholder="Tell me about your project, goals, and any features you need..."
+            />
+            <span className="character-count">
+              {formData.details.length}/2000
+            </span>
+          </div>
 
+          {status && (
+            <p
+              className={
+                status.type === "success"
+                  ? "form-status form-success"
+                  : "form-status form-error"
+              }
+              role="status"
+              aria-live="polite"
+            >
+              {status.message}
+            </p>
+          )}
+
+          <button
+            type="submit"
+            className="submit-inquiry"
+            disabled={submitting}
+          >
+            {submitting ? "Sending..." : "Send Inquiry ↗"}
+          </button>
+
+          <p className="form-required-note">* Required fields</p>
+        </form>
+      </section>
+    </main>
   );
-
 }
-
-
-export default Contact;

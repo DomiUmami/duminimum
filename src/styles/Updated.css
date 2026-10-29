@@ -1,0 +1,573 @@
+
+/* =========================
+   Header & Navigation
+========================= */
+
+header.header {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-sizing: border-box;
+
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1.25rem 2rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+
+  transition:
+    background-color 0.3s ease,
+    padding 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Header appearance after scrolling */
+header.header.scrolled {
+  padding: 0.65rem 2rem;
+  background-color: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.homeimg {
+  display: block;
+  flex-shrink: 0;
+  background-image: url('../images/Normal.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 5rem;
+  height: 5rem;
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+.header.scrolled .homeimg {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin: 0 1rem 0 auto;
+}
+
+.links {
+  font-size: clamp(1rem, 1.5vw, 1.6rem);
+  color: rgb(89, 114, 113);
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.links:hover {
+  color: #da1414;
+  transform: translateY(-3px);
+}
+
+.separator {
+  color: rgba(89, 114, 113, 0.5);
+}
+
+
+/* =========================
+   Landing Page Design System
+========================= */
+
+:root {
+  --accent: #1edab1;
+  --accent-dark: #13a888;
+  --teal-dark: #488582;
+  --text-primary: #263a35;
+  --text-secondary: #596e67;
+  --surface: rgba(255, 255, 255, 0.72);
+  --surface-border: rgba(72, 133, 130, 0.2);
+  --card-shadow: 0 8px 30px rgba(25, 65, 55, 0.07);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 7rem;
+}
+
+body {
+  color: var(--text-primary);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
+  padding-top: 7rem;
+
+  background:
+    radial-gradient(
+      ellipse at 15% 10%,
+      rgba(30, 218, 177, 0.09),
+      transparent 40%
+    ),
+    linear-gradient(
+      180deg,
+      #ececec 0%,
+      #ffffff 45%,
+      #f3faf8 100%
+    );
+}
+
+.section-padding {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 6rem clamp(1.25rem, 7vw, 7rem);
+  scroll-margin-top: 6rem;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: var(--teal-dark);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.section-heading {
+  max-width: 45rem;
+  margin-bottom: 3rem;
+}
+
+.section-heading h2,
+.contact-section h2 {
+  margin: 0 0 1rem;
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  line-height: 1.2;
+}
+
+.section-heading p,
+.contact-section > p {
+  max-width: 42rem;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+/* =========================
+   Hero
+========================= */
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(14rem, 0.7fr);
+  align-items: center;
+  gap: 3rem;
+  min-height: 65vh;
+  box-sizing: border-box;
+}
+
+.hero-content {
+  max-width: 54rem;
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+.hero h1 {
+  margin: 0 0 1.5rem;
+  font-size: clamp(2.3rem, 5.5vw, 5rem);
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+
+.hero-description {
+  max-width: 42rem;
+  color: var(--text-secondary);
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.9;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.hero-note {
+  padding: 2rem;
+  border: 1px solid var(--surface-border);
+  border-radius: 1.25rem;
+  background: var(--surface);
+  box-shadow: var(--card-shadow);
+}
+
+.hero-note span {
+  color: var(--teal-dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.hero-note p {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.7;
+}
+
+/* Secondary links */
+
+.secondary-link {
+  display: inline-block;
+  padding: 0.65rem 0.25rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.secondary-link:hover {
+  color: var(--accent-dark);
+}
+
+/* =========================
+   Services
+========================= */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  padding: 2rem;
+  border: 1px solid var(--surface-border);
+  border-radius: 1rem;
+  background: var(--surface);
+  box-shadow: var(--card-shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 35px rgba(25, 65, 55, 0.12);
+}
+
+.service-card > span,
+.process-card > span {
+  color: var(--teal-dark);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.service-card h3,
+.process-card h3 {
+  margin: 1.25rem 0 0.75rem;
+  font-size: 1.2rem;
+}
+
+.service-card p,
+.process-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.service-card strong {
+  margin-top: auto;
+  padding-top: 1rem;
+  font-size: 1.05rem;
+}
+
+.service-card a,
+.project-card a {
+  margin-top: 1rem;
+  color: var(--teal-dark);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.service-card a:hover,
+.project-card a:hover {
+  color: var(--accent-dark);
+}
+
+.pricing-note {
+  margin-top: 1.5rem;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  line-height: 1.7;
+}
+
+/* =========================
+   Projects
+========================= */
+
+.projects-section {
+  background: rgba(72, 133, 130, 0.06);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/*
+  Keep these styles scoped to the landing page.
+  This prevents conflicts with older project-card layouts.
+*/
+
+.projects-grid .project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  min-width: 0;
+  max-width: none;
+  width: 100%;
+  min-height: 16rem;
+  margin: 0;
+  padding: 2rem;
+
+  border: 1px solid var(--surface-border);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: var(--card-shadow);
+
+  opacity: 1;
+  transform: none;
+  animation: none;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.projects-grid .project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 35px rgba(25, 65, 55, 0.12);
+}
+
+.project-card > span {
+  color: var(--teal-dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.projects-grid .project-card h3 {
+  margin: 1rem 0 0.5rem;
+  color: var(--text-primary);
+  font-size: 1.3rem;
+}
+
+.projects-grid .project-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+/* =========================
+   Process
+========================= */
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.process-card {
+  padding: 1.5rem;
+  border-top: 2px solid var(--accent);
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.process-card h3 {
+  margin-top: 1rem;
+}
+
+/* =========================
+   Contact CTA
+========================= */
+
+.contact-section {
+  margin: 2rem auto;
+  width: calc(100% - 4rem);
+  max-width: 90rem;
+  border-radius: 1.5rem;
+  background: linear-gradient(135deg, #263a35, #488582);
+  color: #ffffff;
+}
+
+.contact-section .eyebrow {
+  color: var(--accent);
+}
+
+.contact-section h2 {
+  max-width: 50rem;
+}
+
+.contact-section > p {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.contact-section .secondary-link {
+  color: #ffffff;
+}
+
+.contact-section .secondary-link:hover {
+  color: var(--accent);
+}
+
+
+/* =========================
+   Responsive Layout
+========================= */
+
+@media (max-width: 900px) {
+  .section-padding {
+    padding: 4rem 2rem;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    min-height: auto;
+  }
+
+  .hero-note {
+    max-width: 35rem;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .nav {
+    gap: 0.8rem;
+    margin-right: 0;
+  }
+
+  .links {
+    font-size: 1.1rem;
+  }
+
+  .separator {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  header.header {
+    padding: 0.75rem 1rem;
+  }
+
+  header.header.scrolled {
+    padding: 0.5rem 1rem;
+  }
+
+  .homeimg {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .header.scrolled .homeimg {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .nav {
+    gap: 0.45rem;
+  }
+
+  .links {
+    font-size: clamp(0.7rem, 2.7vw, 1rem);
+  }
+
+  .separator {
+    font-size: 0.8rem;
+  }
+
+  .main {
+    padding-top: 5rem;
+  }
+
+  .section-padding {
+    padding: 3.5rem 1.25rem;
+  }
+
+  .hero {
+    gap: 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 9vw, 3.2rem);
+  }
+
+  .hero-note {
+    padding: 1.25rem;
+  }
+
+  .hero-actions {
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .services-grid,
+  .projects-grid,
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card,
+  .projects-grid .project-card {
+    padding: 1.5rem;
+  }
+
+  .contact-section {
+    width: calc(100% - 2rem);
+    margin: 1rem auto;
+    border-radius: 1rem;
+  }
+
+  .contact-section .hero-actions {
+    flex-direction: column;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .footer-bottom {
+    position: static;
+    align-self: center;
+    margin-top: 1rem;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

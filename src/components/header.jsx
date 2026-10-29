@@ -26,16 +26,18 @@ const goHome = () => {
   return (
        <header className="header">
 
-      <a className="compname" onClick={goHome} > DUMinimum </a>
+     <a href="https://duminimum.com" className="homeimg"></a>
+        
+    
      <nav className="nav">
         
           <Link to='/' className="links">Home</Link>
-<a> | </a>
-          <a className="links" href="https://www.linkedin.com/in/dominikwilliams/">LinkedIn</a>
-<a> | </a>
-          <Link to='/projects' className="links">Projects</Link>
-<a> | </a>
-          <a className="links" href="https://www.rbrock1588.org">Recent Project</a>
+<a style={{fontSize: "2rem"}}> | </a>
+          <Link to='/portfolio' className="links">Portfolio</Link>
+<a style={{fontSize: "2rem"}}> | </a>
+          <Link to='/about' className="links">About</Link>
+<a style={{fontSize: "2rem"}}> | </a>
+          <Link to='/contact' className="links">Contact</Link>
           
       </nav>
     </header>

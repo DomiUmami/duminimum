@@ -6,13 +6,16 @@ import ScrollToTop from './components/ScrollToTop';
 
 import { Analytics } from '@vercel/analytics/react';
 
-import Contact from './pages/Contact';
 import Payment from './pages/Payment';
-import Projects from './pages/Portfolio';
-import Info from './pages/Info';
+
+
+import About from './pages/About';
+import LandingPage from './pages/LandingPage';
+import Portfolio from './pages/Portfolio';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
 import Booking from './pages/Booking';
+import Contact from './pages/Contact';
 
 
 
@@ -23,24 +26,22 @@ root.render(
         <ScrollToTop/>
       <Switch>
 
-       {/* Homepage */}
-       {/* Contact and Booking */}
-        <Route exact path="/" component={Contact} />
-       {/* Payment Portal */}
-        <Route path="/payment" component={Payment} />
+       
+       {/* Landing Page */}
+        <Route exact path="/" component={LandingPage} />
        {/* Projects */}
-        <Route path="/projects" component={Projects} />
-       {/* Info/ICS App Currently */}
-        <Route path="/info" component={Info} />
-       {/* Info/ICS App Currently */}
+        <Route path="/portfolio" component={Portfolio} />
+       {/* About */}
+        <Route path="/about" component={About} />
+       {/* Privacy Policy Placeholder */}
         <Route path="/privacy-policy" component={Privacy} />
-       {/* Info/ICS App Currently */}
+       {/* Terms Placeholder */}
         <Route path="/terms-and-conditions" component={Terms} />
        {/* Calendly Booking */}
         <Route path="/booking" component={Booking} />
+       {/* Contact Form */}
+        <Route path="/contact" component={Contact} />
      
-       
-
       </Switch>
     </Router>
     <Analytics/>

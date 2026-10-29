@@ -13,9 +13,7 @@ function Footer() {
     <div className="right">
     <Link to ="/privacy-policy"className="footertext">Privacy Policy</Link>
     <Link to ="/terms-and-conditions"className="footertext">Terms & Conditions</Link>
-  <a className="footerlink" href="https://mail.google.com/mail/?view=cm&fs=1&to=duminimum@gmail.com&su=Hello&body=I%20saw%20your%20portfolio..."
-      target="_blank"
-      rel="noopener noreferrer"
+  <a className="footerlink" href="mailto:duminimum@gmail.com"
       >
     duminimum@gmail.com
   </a>
@@ -23,7 +21,7 @@ function Footer() {
   </div>
 
   
-  <div className="footer-bottom">© {new Date().getFullYear()} by DUMinimum. Powered by{" "}<a href="https://duminimum.vercel.app/" className="footerlink">DUMinimum</a></div>
+  <div className="footer-bottom">© {new Date().getFullYear()} {" "}<a href="https://www.duminimum.com/" className="footerlink">DUMinimum</a></div>
         </footer>
   );
 }

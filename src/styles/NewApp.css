@@ -36,7 +36,8 @@ header.header {
   align-items: top;
   background-color: #ffffff34;
   transform: translateY(-15px);
-  animation: fadeInUp 0.6s ease-out forwards;
+  animation: slideInDown 0.6s ease-out forwards;
+  padding: 2rem;
 }
 .compname {
   position: static;
@@ -51,20 +52,32 @@ header.header {
   cursor: pointer;
 }
 
+.homeimg {
+    background-image: url('../images/Normal.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 5rem;
+    height: 5rem;
+}
+
 /* =========================
    Navigation Container
 ========================= */
 
 .nav {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-right: 4rem;
   margin-top: 1rem;
+  gap: 2rem;
 }
 
+
 .links {
-  position: static;
-  margin-right: 0.2rem;
-  font-size: 1rem;
+  font-size: 3rem;
   color: rgb(89, 114, 113);
   text-decoration: none;
   transition: color 0.2s ease, transform 0.2s ease;
@@ -72,6 +85,7 @@ header.header {
 
 .links:hover{
   color: #da1414;
+  transform: translateY(-20px);
 }
 
 /* =========================
@@ -81,7 +95,7 @@ Main Page
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 3rem;
+    margin-top: 10rem;
     background: linear-gradient(180deg, rgb(236, 236, 236) 0%,  rgb(255, 255, 255) 70%, rgb(87, 199, 180) 96%, rgb(72, 133, 130) 100%);
     background-repeat: no-repeat;
     background-size: 100%;
@@ -111,18 +125,20 @@ Main Page
   background-color: #ff000000;
   padding: 1rem;
   gap: 1rem;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease-out forwards;
 }
 
 .content {
   display: flex;
   flex-wrap: wrap;
   justify-items: center;
-  background-color: #96969698;
-  border-radius: 2rem;
+  background-color: #96969600;
+  border-radius: 0rem;
   padding: 1rem;
   gap: 1rem;
   height: auto;
-  border-style: double;
+  width: 50%;
 }
 
 
@@ -341,7 +357,7 @@ Main Page
 .project-card {
   opacity: 0;
   transform: translateY(20px);
-  animation: fadeInUp 0.6s forwards ease-out;
+  animation: slideInDown 0.6s forwards ease-out;
 }
 
 /*======================
@@ -370,9 +386,21 @@ Main Page
   
 }
 
-@keyframes fadeInUp {
+@keyframes slideInDown {
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
